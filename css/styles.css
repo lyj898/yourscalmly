@@ -21,17 +21,17 @@
   --color-text-muted: #5A5142;
   --color-text-on-accent: #FFFFFF;
 
-  /* Accents — muted wine and olive, deliberately not brown/terracotta */
-  --color-primary: #7C3B49;       /* muted wine/berry — primary actions */
-  --color-primary-hover: #632E39;
-  --color-primary-tint: #ECDFE0;
-  --color-accent: #4F6355;        /* deep muted sage — secondary accent */
-  --color-accent-tint: #E2E7E0;
-  --color-gold: #93733C;          /* muted brass — decorative accent */
+  /* Accents — matched to the logo mark: warm ring-brown + wave-teal */
+  --color-primary: #7C6A4A;       /* logo ring brown — primary actions */
+  --color-primary-hover: #5E5036;
+  --color-primary-tint: #EDE7D9;
+  --color-accent: #4F7A82;        /* logo wave teal — secondary accent */
+  --color-accent-tint: #E1EAEB;
+  --color-gold: #C2903F;          /* logo sun gold — decorative accent */
 
-  /* Wordmark colors, matched to the logo mark's ring/wave tones */
-  --logo-ring: #7C6A4A;
-  --logo-wave: #4F7A82;
+  /* Wordmark colors — same values as the accents above, kept as aliases */
+  --logo-ring: var(--color-primary);
+  --logo-wave: var(--color-accent);
 
   /* Feedback */
   --color-success-bg: #E5EADD;
@@ -96,16 +96,16 @@
     --color-text: #F3ECE0;
     --color-text-muted: #CBBFA9;
 
-    --color-primary: #D68FA0;
-    --color-primary-hover: #E2A5B4;
-    --color-primary-tint: #3A272C;
+    --color-primary: #C9B48C;
+    --color-primary-hover: #D9C6A0;
+    --color-primary-tint: #362F22;
 
-    --color-accent: #93A585;
-    --color-accent-tint: #2C332A;
-    --color-gold: #BC9A5C;
+    --color-accent: #7FB0B8;
+    --color-accent-tint: #24302F;
+    --color-gold: #E0B36B;
 
-    --logo-ring: #B8A47C;
-    --logo-wave: #7BA8B0;
+    --logo-ring: var(--color-primary);
+    --logo-wave: var(--color-accent);
 
     --color-success-bg: #29352A;
     --color-success-text: #B7D8AF;

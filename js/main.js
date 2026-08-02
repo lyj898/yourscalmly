@@ -58,13 +58,11 @@
     var t = GP_I18N.t;
     return (
       '<div class="container nav-bar">' +
-        '<a class="brand" href="' + base + 'index.html">' +
-          '<svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">' +
-            '<path class="brand-mark-path" d="M7 34 C 15 30, 1 25, 9 20 C 17 15, 3 12, 11 8 C 16 5, 22 9, 27 6 C 30 4, 31 8, 33 6" />' +
-            '<circle class="brand-mark-start" cx="7" cy="33" r="2.4" />' +
-            '<circle class="brand-mark-end" cx="33" cy="7" r="3" />' +
-          '</svg>' +
-          '<span data-i18n="common.brand">' + t('common.brand') + '</span>' +
+        '<a class="brand" href="' + base + 'index.html" aria-label="' + t('common.brand') + '">' +
+          '<img class="brand-mark" src="' + base + 'assets/logo-mark.png" alt="" width="76" height="76">' +
+          '<span class="brand-word">' +
+            '<span class="brand-word-a">Yours</span><span class="brand-word-b">Calmly</span>' +
+          '</span>' +
         '</a>' +
         '<nav aria-label="Primary">' +
           '<ul class="nav-links">' +

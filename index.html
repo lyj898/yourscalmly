@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+  YoursCalmly — Home page
+  ----------------------------------------------------
+  File structure of this project:
+    /index.html                Home: hero, games hub, "why", accessibility,
+                                language note, footer (this file)
+    /games/*.html              The three playable mini-games
+    /css/styles.css            Shared design system (all pages)
+    /js/i18n.js                Translation strings (EN complete, ZH partial)
+    /js/games-data.js          Game definitions (logic/content, data-driven)
+    /js/main.js                Shared header/footer + language toggle
+    /js/game-shell.js          Shared UI helpers used by every game
+    /js/memory-lane.js         Memory Lane game logic
+    /js/find-the-group.js      Find the Group game logic
+    /js/tune-match.js          Tune Match game logic
+
+  Swap the brand: change GP_I18N.translations.*.common.brand in js/i18n.js
+  and the <title> tags below — nothing else references the name directly.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YoursCalmly — A calm place to play</title>
+  <meta name="description" content="Three short, gentle games designed for one player at a time. No pressure, no timers, no judgement.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content" data-i18n="common.skipToContent">Skip to main content</a>
+
+  <header class="site-header" id="site-header"></header>
+
+  <div id="zh-note" class="container" role="status" hidden style="padding-top: 0.75rem; color: var(--color-text-muted); font-size: 0.95rem;"></div>
+
+  <main id="main-content" class="site-main">
+
+    <!-- 1. Hero -->
+    <section class="hero">
+      <div class="hero-shape one" aria-hidden="true"></div>
+      <div class="hero-shape two" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow" data-i18n="hero.eyebrow">A calm place to play</span>
+          <h1 data-i18n="hero.title">Gentle games, at your own pace.</h1>
+          <p class="lead" data-i18n="hero.lead">Three short, friendly activities designed for one player at a time. No pressure, no timers you can’t control, no judgement — just a pleasant way to spend a few quiet minutes.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#games-hub" data-i18n="hero.ctaPrimary">Start playing</a>
+            <a class="btn btn-secondary btn-lg" href="#why" data-i18n="hero.ctaSecondary">Why we made this</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section-alt" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
+          <h2 id="how-title" data-i18n="how.title">Simple, from start to finish</h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3 data-i18n="how.step1title">Choose a game</h3>
+            <p data-i18n="how.step1body">Three short activities to pick from. Each one is explained in a single sentence.</p>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3 data-i18n="how.step2title">Play one round at a time</h3>
+            <p data-i18n="how.step2body">Every round has one clear question and a few large choices. Nothing to memorise.</p>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3 data-i18n="how.step3title">Finish whenever you like</h3>
+            <p data-i18n="how.step3body">A round takes under two minutes. Stop after one, or play all five — entirely up to you.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 2 & 3. Games hub -->
+    <section id="games-hub" aria-labelledby="games-hub-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" data-i18n="hub.eyebrow">Games</span>
+          <h2 id="games-hub-title" data-i18n="hub.title">Three gentle games</h2>
+          <p data-i18n="hub.lead">Each one plays differently, but all are simple, short, and forgiving. Pick whichever feels good today.</p>
+        </div>
+        <div class="game-grid">
+          <article class="game-card">
+            <div class="game-card-icon" aria-hidden="true">🍵</div>
+            <h3 data-i18n="hub.memoryLane.title">Memory Lane</h3>
+            <p data-i18n="hub.memoryLane.desc">Look at three familiar pictures and tap the one that answers a simple, friendly question.</p>
+            <a class="btn btn-primary" href="games/memory-lane.html" data-i18n="hub.playLabel" data-i18n-aria="hub.memoryLane.playAria">Play</a>
+          </article>
+          <article class="game-card">
+            <div class="game-card-icon" aria-hidden="true">🧺</div>
+            <h3 data-i18n="hub.findGroup.title">Find the Group</h3>
+            <p data-i18n="hub.findGroup.desc">A few pictures appear together — tap the ones that belong to the same familiar group.</p>
+            <a class="btn btn-primary" href="games/find-the-group.html" data-i18n="hub.playLabel" data-i18n-aria="hub.findGroup.playAria">Play</a>
+          </article>
+          <article class="game-card">
+            <div class="game-card-icon" aria-hidden="true">🎵</div>
+            <h3 data-i18n="hub.tuneMatch.title">Tune Match</h3>
+            <p data-i18n="hub.tuneMatch.desc">Listen to a short, gentle tune and choose the mood it matches from three large options.</p>
+            <a class="btn btn-primary" href="games/tune-match.html" data-i18n="hub.playLabel" data-i18n-aria="hub.tuneMatch.playAria">Play</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Why these games -->
+    <section id="why" class="section-alt" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" data-i18n="why.eyebrow">The thinking behind it</span>
+          <h2 id="why-title" data-i18n="why.title">Why these activities may help</h2>
+          <p data-i18n="why.intro">These games are inspired by cognitive stimulation approaches that are often used, informally and in structured programmes, with people living with early-stage dementia. Each one leans on something familiar — everyday objects, simple categories, or a gentle tune — rather than testing memory under pressure.</p>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3><span aria-hidden="true">🔎</span> <span data-i18n="why.point1title">Recognition, not recall</span></h3>
+            <p data-i18n="why.point1body">Memory Lane uses familiar, concrete images so the activity feels like noticing, not straining to remember.</p>
+          </div>
+          <div class="info-card">
+            <h3><span aria-hidden="true">🗂️</span> <span data-i18n="why.point2title">Simple categorisation</span></h3>
+            <p data-i18n="why.point2body">Find the Group draws on everyday groupings — fruits, kitchen items, clothing — that tend to stay familiar for a long time.</p>
+          </div>
+          <div class="info-card">
+            <h3><span aria-hidden="true">🎶</span> <span data-i18n="why.point3title">Music and reminiscence</span></h3>
+            <p data-i18n="why.point3body">Tune Match uses short, gentle melodies. Music and familiar cues are often associated with calm engagement.</p>
+          </div>
+          <div class="info-card">
+            <h3><span aria-hidden="true">🌿</span> <span data-i18n="why.point4title">Confidence, not competition</span></h3>
+            <p data-i18n="why.point4body">There are no scores to chase and no timers to beat. The aim is a pleasant few minutes, not a test.</p>
+          </div>
+        </div>
+        <div class="disclaimer-box">
+          <strong data-i18n="why.disclaimerTitle">A note on what this is — and isn’t</strong>
+          <p data-i18n="why.disclaimer" class="mt-0">This site offers supportive, wellness-oriented activities for enjoyment and gentle engagement. It is not a medical device, treatment, or diagnostic tool, and it does not claim to cure, prevent, or slow the progression of dementia or any condition. If you have questions about memory, thinking, or a diagnosis, please speak with a qualified healthcare professional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Accessibility / design principles -->
+    <section id="accessibility" aria-labelledby="accessibility-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" data-i18n="accessibility.eyebrow">Built with care</span>
+          <h2 id="accessibility-title" data-i18n="accessibility.title">Accessibility and design principles</h2>
+          <p data-i18n="accessibility.intro">These choices were made on purpose, to keep every screen calm and easy to use.</p>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3><span aria-hidden="true">☝️</span> <span data-i18n="accessibility.point1title">One thing per screen</span></h3>
+            <p data-i18n="accessibility.point1body">Every screen asks for a single action, so there is never a question of what to do next.</p>
+          </div>
+          <div class="info-card">
+            <h3><span aria-hidden="true">🔠</span> <span data-i18n="accessibility.point2title">Large text and targets</span></h3>
+            <p data-i18n="accessibility.point2body">Body text is large and buttons are big enough to tap comfortably, even with less steady hands.</p>
+          </div>
+          <div class="info-card">
+            <h3><span aria-hidden="true">🌗</span> <span data-i18n="accessibility.point3title">Strong, warm contrast</span></h3>
+            <p data-i18n="accessibility.point3body">Colours are chosen for readability first, with warm tones instead of harsh clinical brights.</p>
+          </div>
+          <div class="info-card">
+            <h3><span aria-hidden="true">⌨️</span> <span data-i18n="accessibility.point4title">Keyboard and screen-reader friendly</span></h3>
+            <p data-i18n="accessibility.point4body">Every button and card can be reached and used without a mouse, with clear focus outlines throughout.</p>
+          </div>
+          <div class="info-card">
+            <h3><span aria-hidden="true">⏳</span> <span data-i18n="accessibility.point5title">No countdown pressure</span></h3>
+            <p data-i18n="accessibility.point5body">Nothing is timed by default. Rounds wait patiently for as long as they are needed.</p>
+          </div>
+          <div class="info-card">
+            <h3><span aria-hidden="true">🍃</span> <span data-i18n="accessibility.point6title">Calm motion</span></h3>
+            <p data-i18n="accessibility.point6body">Animations are minimal and respect your device’s reduced-motion setting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Future language support -->
+    <section id="language" class="section-alt" aria-labelledby="language-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" data-i18n="language.eyebrow">Looking ahead</span>
+          <h2 id="language-title" data-i18n="language.title">Future language support</h2>
+        </div>
+        <div class="language-note-card">
+          <span class="icon" aria-hidden="true">🌏</span>
+          <p data-i18n="language.body" class="mt-0">YoursCalmly is being built so that a full Chinese version can be added without reworking the site. You can already switch the interface below — the menus and layout are ready, while the games’ full content is still being translated.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 7. Footer -->
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="./js/i18n.js"></script>
+  <script src="./js/games-data.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/game-shell.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      GP.initChrome();
+    });
+  </script>
+</body>
+</html>

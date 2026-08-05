@@ -740,6 +740,18 @@ section + section {
 }
 .disclaimer-box strong { color: var(--color-text); }
 
+/* ---------- Long-form prose sections ---------- */
+.prose {
+  max-width: 46rem;
+}
+.prose h3 {
+  font-size: 1.35rem;
+  margin-top: var(--space-5);
+}
+.prose p {
+  color: var(--color-text-muted);
+}
+
 /* ---------- Language section ---------- */
 .language-note-card {
   background: var(--color-surface);

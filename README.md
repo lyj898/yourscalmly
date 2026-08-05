@@ -28,9 +28,30 @@ js/
   memory-lane.js, find-the-group.js, tune-match.js
                               Per-game logic, each using the shared helpers
                              above
+robots.txt                  Allows all crawlers, points to the sitemap
+sitemap.xml                 All four pages with hreflang alternates
 CNAME                       Custom domain for GitHub Pages (yourscalmly.com)
 .nojekyll                   Tells GitHub Pages to serve files as-is
 ```
+
+## SEO
+
+Every page carries a keyword-led `<title>` and `<meta name="description">`,
+a `<link rel="canonical">`, `hreflang` alternates for `en` / `zh` /
+`x-default`, and Open Graph + Twitter card tags. `index.html` also embeds
+`WebSite` and `FAQPage` JSON-LD; each game page embeds `Game` JSON-LD.
+
+Because the language toggle swaps content client-side without a reload,
+`js/main.js` also rewrites `document.title` and the meta description on
+every language change. Each page declares which strings to use via
+`data-i18n-title` / `data-i18n-desc` on its `<html>` element, resolved
+against the `seo.*` keys in `js/i18n.js`.
+
+The crawlable body copy lives in the "why these activities may help",
+"for families and caregivers", FAQ, and per-game "about" sections — all
+plain server-served HTML in the page source, so it indexes without
+JavaScript. After deploying, submit `https://yourscalmly.com/sitemap.xml`
+in Google Search Console and Bing Webmaster Tools.
 
 No images, icons, or fonts are downloaded from anywhere — cards use emoji
 and system fonts, and the logo is a small inline SVG, so the site loads
@@ -107,18 +128,13 @@ The site was structured so a new game doesn't touch the shell:
 ## Chinese localisation
 
 All UI copy lives in `js/i18n.js` under `translations.en` and
-`translations.zh`. Today:
-
-- **Fully translated in Chinese, including gameplay:** navigation, hero,
-  "how it works", games-hub cards, section headings, footer, all shared
-  game-shell strings, and all three games in full — titles, instructions,
-  feedback, and every round's prompts/options.
-- **Left in English for now, with an automatic fallback:** the long-form
-  "why these activities may help" and "accessibility" paragraphs.
-  `GP_I18N.t()` falls back to English for any missing Chinese key, so
-  nothing breaks or shows blank — a small note appears near the top of
-  the page when Chinese is selected, explaining that a couple of the
-  longer background sections are still being translated.
+`translations.zh`. The site is **fully translated in both languages**:
+navigation, hero, "how it works", games-hub cards, "why these activities
+may help", accessibility, footer, all shared game-shell strings, and all
+three games in full — titles, instructions, feedback, and every round's
+prompts/options. `GP_I18N.t()` still falls back to English for any key a
+future language leaves blank, so nothing breaks or shows empty if a new
+language is added incrementally later (see `GP_I18N.isPartial()`).
 
 The language toggle works instantly (no reload) and persists across the
 whole site **without any storage** — the chosen language travels as a
@@ -126,10 +142,10 @@ whole site **without any storage** — the chosen language travels as a
 cards, breadcrumbs, and the results screen), so switching language on one
 page keeps it selected as you move between the home page and any game.
 
-To finish the Chinese version later: fill in the remaining `zh` keys in
-`js/i18n.js` (`why` and `accessibility` bodies — the structure already
-mirrors `en` key-for-key) and remove the `meta.partial: true` flag once
-satisfied.
+To add a third language later: add a new top-level key under
+`translations` in `js/i18n.js` mirroring the `en` structure, add a toggle
+button in `main.js`'s `headerHTML()`, and set `meta.partial: true` on that
+language's object until every key is filled in.
 
 ## Design principles this build follows
 

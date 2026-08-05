@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://yourscalmly.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yourscalmly.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yourscalmly.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yourscalmly.com/"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://yourscalmly.com/games/memory-lane.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yourscalmly.com/games/memory-lane.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yourscalmly.com/games/memory-lane.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yourscalmly.com/games/memory-lane.html"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yourscalmly.com/games/find-the-group.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yourscalmly.com/games/find-the-group.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yourscalmly.com/games/find-the-group.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yourscalmly.com/games/find-the-group.html"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yourscalmly.com/games/tune-match.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yourscalmly.com/games/tune-match.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://yourscalmly.com/games/tune-match.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yourscalmly.com/games/tune-match.html"/>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

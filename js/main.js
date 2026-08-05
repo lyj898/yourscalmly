@@ -91,6 +91,8 @@
           '<li><a href="' + base + 'index.html#games-hub">' + t('nav.games') + '</a></li>' +
           '<li><a href="' + base + 'index.html#why">' + t('nav.why') + '</a></li>' +
           '<li><a href="' + base + 'index.html#accessibility">' + t('nav.accessibility') + '</a></li>' +
+          '<li><a href="' + base + 'index.html#guide">' + t('nav.guide') + '</a></li>' +
+          '<li><a href="' + base + 'index.html#faq">' + t('nav.faq') + '</a></li>' +
           '<li><a href="' + base + 'index.html#language">' + t('language.title') + '</a></li>' +
         '</ul>' +
         '<p class="disclaimer">' + t('footer.disclaimer') + '</p>' +
@@ -127,6 +129,19 @@
     });
   }
 
+  /*
+    Pages declare their own SEO copy via data-i18n-title / data-i18n-desc on
+    <html>, so each page keeps a distinct title and description per language.
+  */
+  function updatePageMeta() {
+    var root = document.documentElement;
+    var titleKey = root.getAttribute('data-i18n-title');
+    var descKey = root.getAttribute('data-i18n-desc');
+    if (titleKey) document.title = GP_I18N.t(titleKey);
+    var descEl = document.querySelector('meta[name="description"]');
+    if (descKey && descEl) descEl.setAttribute('content', GP_I18N.t(descKey));
+  }
+
   function updatePartialNote() {
     var note = document.getElementById('zh-note');
     if (!note) return;
@@ -159,6 +174,7 @@
     markActiveNav();
     updateLangButtons();
     applyTranslations(document);
+    updatePageMeta();
     updatePartialNote();
     syncInternalLinks();
   }

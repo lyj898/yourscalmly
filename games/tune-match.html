@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <!-- Tune Match — melody mood-matching game. See /js/tune-match.js for logic. -->
-<html lang="en">
+<html lang="en" data-i18n-title="seo.tuneMatchTitle" data-i18n-desc="seo.tuneMatchDesc">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tune Match — YoursCalmly</title>
-  <meta name="description" content="Listen to a short, gentle tune and choose the mood it matches from three large options.">
-  <link rel="icon" href="data:,">
+  <title>Tune Match — Music Mood Game for Dementia | YoursCalmly</title>
+  <meta name="description" content="A free, soothing music-matching game for adults with early-stage dementia. Listen to a short, gentle tune and choose the mood it matches from three large options.">
+  <link rel="canonical" href="https://yourscalmly.com/games/tune-match.html">
+  <link rel="alternate" hreflang="en" href="https://yourscalmly.com/games/tune-match.html">
+  <link rel="alternate" hreflang="zh" href="https://yourscalmly.com/games/tune-match.html?lang=zh">
+  <link rel="alternate" hreflang="x-default" href="https://yourscalmly.com/games/tune-match.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YoursCalmly">
+  <meta property="og:title" content="Tune Match — Music Mood Game for Dementia">
+  <meta property="og:description" content="A free, soothing music-matching game for adults with early-stage dementia. No timer, no score.">
+  <meta property="og:url" content="https://yourscalmly.com/games/tune-match.html">
+  <meta property="og:image" content="https://yourscalmly.com/assets/logo-mark.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tune Match — Music Mood Game for Dementia">
+  <meta name="twitter:description" content="A free, soothing music-matching game for adults with early-stage dementia. No timer, no score.">
+  <meta name="twitter:image" content="https://yourscalmly.com/assets/logo-mark.png">
+  <link rel="icon" type="image/png" href="../assets/logo-mark.png">
+  <link rel="apple-touch-icon" href="../assets/logo-mark.png">
   <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Game",
+    "name": "Tune Match",
+    "url": "https://yourscalmly.com/games/tune-match.html",
+    "description": "A free, soothing online music game for adults with early-stage dementia. Hear a short, gentle tune and choose the mood it matches. No timer, no score.",
+    "genre": "Cognitive wellness",
+    "numberOfPlayers": { "@type": "QuantitativeValue", "value": 1 },
+    "inLanguage": ["en", "zh"],
+    "isAccessibleForFree": true,
+    "publisher": { "@type": "Organization", "name": "YoursCalmly", "url": "https://yourscalmly.com/" }
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content" data-i18n="common.skipToContent">Skip to main content</a>
@@ -38,6 +67,13 @@
       </div>
 
       <p class="take-your-time" data-i18n="common.takeYourTime">Take your time. There is no clock running.</p>
+    </section>
+
+    <section class="container" aria-labelledby="about-title">
+      <div class="prose">
+        <h2 id="about-title" data-i18n="tuneMatch.aboutTitle">About Tune Match</h2>
+        <p data-i18n="tuneMatch.aboutBody">Tune Match is a free online music game for adults living with early-stage dementia or mild memory changes. Each of the five rounds plays a short, gentle melody generated in the browser — nothing to download — and asks which of three moods it feels closest to: a calm morning, a quiet evening, or a lively dance. Music often reaches people warmly even when words are harder, and this round asks only for a feeling, so there is no right answer to get wrong. You can replay the tune as many times as you like, and if sound is unavailable a short written description of the melody appears instead. A full game takes about five minutes.</p>
+      </div>
     </section>
   </main>
 

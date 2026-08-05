@@ -7,7 +7,7 @@
                                 language note, footer (this file)
     /games/*.html              The three playable mini-games
     /css/styles.css            Shared design system (all pages)
-    /js/i18n.js                Translation strings (EN complete, ZH partial)
+    /js/i18n.js                Translation strings (EN + ZH, both complete)
     /js/games-data.js          Game definitions (logic/content, data-driven)
     /js/main.js                Shared header/footer + language toggle
     /js/game-shell.js          Shared UI helpers used by every game
@@ -18,14 +18,80 @@
   Swap the brand: change GP_I18N.translations.*.common.brand in js/i18n.js
   and the <title> tags below — nothing else references the name directly.
 -->
-<html lang="en">
+<html lang="en" data-i18n-title="seo.homeTitle" data-i18n-desc="seo.homeDesc">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YoursCalmly — A calm place to play</title>
-  <meta name="description" content="Three short, gentle games designed for one player at a time. No pressure, no timers, no judgement.">
-  <link rel="icon" href="data:,">
+  <title>YoursCalmly — Calm Cognitive Games for Early-Stage Dementia</title>
+  <meta name="description" content="Three free, gentle online games for adults with early-stage dementia or mild memory changes — recognition, categorisation, and music matching. No timers, no scores, no sign-up. In English and Chinese.">
+  <link rel="canonical" href="https://yourscalmly.com/">
+  <link rel="alternate" hreflang="en" href="https://yourscalmly.com/">
+  <link rel="alternate" hreflang="zh" href="https://yourscalmly.com/?lang=zh">
+  <link rel="alternate" hreflang="x-default" href="https://yourscalmly.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YoursCalmly">
+  <meta property="og:title" content="YoursCalmly — Calm Cognitive Games for Early-Stage Dementia">
+  <meta property="og:description" content="Three free, gentle online games for adults with early-stage dementia or mild memory changes. No timers, no scores, no sign-up. In English and Chinese.">
+  <meta property="og:url" content="https://yourscalmly.com/">
+  <meta property="og:image" content="https://yourscalmly.com/assets/logo-mark.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="YoursCalmly — Calm Cognitive Games for Early-Stage Dementia">
+  <meta name="twitter:description" content="Three free, gentle online games for adults with early-stage dementia or mild memory changes. No timers, no scores, no sign-up.">
+  <meta name="twitter:image" content="https://yourscalmly.com/assets/logo-mark.png">
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
+  <link rel="apple-touch-icon" href="./assets/logo-mark.png">
   <link rel="stylesheet" href="./css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "YoursCalmly",
+        "url": "https://yourscalmly.com/",
+        "description": "Three free, gentle online games for adults with early-stage dementia or mild memory changes — recognition, categorisation, and music matching.",
+        "inLanguage": ["en", "zh"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are the games free to play?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. All three YoursCalmly games are completely free, with no account, sign-up, subscription, or app download required — just open the site in a browser and start playing." }
+          },
+          {
+            "@type": "Question",
+            "name": "Who are these games designed for?",
+            "acceptedAnswer": { "@type": "Answer", "text": "YoursCalmly is designed for adults living with early-stage dementia or mild memory changes who enjoy playing on their own, as well as caregivers and family members looking for a calm activity to share." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is YoursCalmly a medical treatment for dementia?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. YoursCalmly offers supportive, wellness-oriented activities for enjoyment and gentle engagement. It is not a medical device, treatment, or diagnostic tool, and does not claim to cure, prevent, or slow the progression of dementia or any condition." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do the games have timers or scores?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. None of the three games use countdown timers or competitive scoring by default. Every round waits patiently for as long as it is needed, so there is no pressure to hurry or perform." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I play in Chinese?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the language toggle at the top of any page to switch the entire site — including all three games — between English and Chinese instantly, with no reload." }
+          },
+          {
+            "@type": "Question",
+            "name": "What devices can I play on?",
+            "acceptedAnswer": { "@type": "Answer", "text": "YoursCalmly works in any modern web browser on a phone, tablet, or computer, with large text and large buttons designed to be easy to read and tap, even with less steady hands." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content" data-i18n="common.skipToContent">Skip to main content</a>
@@ -43,8 +109,8 @@
       <div class="container">
         <div class="hero-content">
           <span class="eyebrow" data-i18n="hero.eyebrow">A calm place to play</span>
-          <h1 data-i18n="hero.title">Gentle games, at your own pace.</h1>
-          <p class="lead" data-i18n="hero.lead">Three short, friendly activities designed for one player at a time. No pressure, no timers you can’t control, no judgement — just a pleasant way to spend a few quiet minutes.</p>
+          <h1 data-i18n="hero.title">Gentle brain games for early-stage dementia.</h1>
+          <p class="lead" data-i18n="hero.lead">Three short, friendly online activities designed for one player at a time — free, with no sign-up. No pressure, no timers you can’t control, no judgement — just a pleasant way to spend a few quiet minutes.</p>
           <div class="hero-actions">
             <a class="btn btn-primary btn-lg" href="#games-hub" data-i18n="hero.ctaPrimary">Start playing</a>
             <a class="btn btn-secondary btn-lg" href="#why" data-i18n="hero.ctaSecondary">Why we made this</a>
@@ -144,8 +210,32 @@
       </div>
     </section>
 
+    <!-- 4b. Caregiver guide -->
+    <section id="guide" aria-labelledby="guide-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" data-i18n="guide.eyebrow">For families and caregivers</span>
+          <h2 id="guide-title" data-i18n="guide.title">A short guide to using YoursCalmly</h2>
+          <p data-i18n="guide.intro">Many people come here looking for a simple, calming online activity to share with a parent, partner, or friend living with early-stage dementia or mild cognitive changes. This section explains what the games involve, how long a session takes, and how to introduce them gently.</p>
+        </div>
+        <div class="prose">
+          <h3 data-i18n="guide.s1title">What a session actually looks like</h3>
+          <p data-i18n="guide.s1body">A round asks one clear question — "Which one is used for making a cup of tea?" — and offers a few large picture choices. There are five rounds in each game, and a full game takes roughly five to ten minutes at an unhurried pace. You can stop after a single round; nothing is lost, and nothing needs to be finished. Choosing an unexpected answer produces a warm, matter-of-fact response rather than a buzzer or a red cross.</p>
+
+          <h3 data-i18n="guide.s2title">How to introduce the games</h3>
+          <p data-i18n="guide.s2body">Sitting alongside someone and letting them tap for themselves usually works better than handing over a device with instructions. Open one game rather than presenting all three at once, read the question aloud if that helps, and let silence sit — the screen will wait indefinitely. If a round feels frustrating, moving to a different game, or stopping entirely, is a perfectly good outcome. The aim is a pleasant few minutes together, not a completed set.</p>
+
+          <h3 data-i18n="guide.s3title">Choosing which game to open first</h3>
+          <p data-i18n="guide.s3body">Memory Lane is the gentlest starting point: three familiar pictures, one simple question, one tap. Find the Group asks for a little more — picking several pictures that belong to the same everyday category, such as fruits or kitchen items — and suits someone who enjoys sorting things. Tune Match plays a short melody and asks which mood it fits; it works well for people who respond warmly to music, and it can be played by ear alone, with a written description available if sound is unavailable.</p>
+
+          <h3 data-i18n="guide.s4title">What this site is not</h3>
+          <p data-i18n="guide.s4body">YoursCalmly does not assess, score, track, or diagnose anything. There is no account, no caregiver dashboard, no analytics, and no data leaves the device. It is not a substitute for a clinical cognitive stimulation programme, occupational therapy, or medical advice. If you have questions about memory, thinking, or a diagnosis, a qualified healthcare professional is the right place to start.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- 5. Accessibility / design principles -->
-    <section id="accessibility" aria-labelledby="accessibility-title">
+    <section id="accessibility" class="section-alt" aria-labelledby="accessibility-title">
       <div class="container">
         <div class="section-header">
           <span class="eyebrow" data-i18n="accessibility.eyebrow">Built with care</span>
@@ -181,16 +271,52 @@
       </div>
     </section>
 
-    <!-- 6. Future language support -->
-    <section id="language" class="section-alt" aria-labelledby="language-title">
+    <!-- 6. Language support -->
+    <section id="language" aria-labelledby="language-title">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow" data-i18n="language.eyebrow">Looking ahead</span>
-          <h2 id="language-title" data-i18n="language.title">Future language support</h2>
+          <span class="eyebrow" data-i18n="language.eyebrow">Two languages</span>
+          <h2 id="language-title" data-i18n="language.title">Available in English and Chinese</h2>
         </div>
         <div class="language-note-card">
           <span class="icon" aria-hidden="true">🌏</span>
-          <p data-i18n="language.body" class="mt-0">YoursCalmly is being built so that a full Chinese version can be added without reworking the site. You can already switch the interface below — the menus and layout are ready, while the games’ full content is still being translated.</p>
+          <p data-i18n="language.body" class="mt-0">YoursCalmly is fully available in English and Chinese — use the language toggle at the top of any page to switch instantly, with no reload and no account needed. Every section, and all three games, are translated in full.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section id="faq" class="section-alt" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" data-i18n="faq.eyebrow">Common questions</span>
+          <h2 id="faq-title" data-i18n="faq.title">Frequently asked questions</h2>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3 data-i18n="faq.q1title">Are the games free to play?</h3>
+            <p data-i18n="faq.q1body">Yes. All three YoursCalmly games are completely free, with no account, sign-up, subscription, or app download required — just open the site in a browser and start playing.</p>
+          </div>
+          <div class="info-card">
+            <h3 data-i18n="faq.q2title">Who are these games designed for?</h3>
+            <p data-i18n="faq.q2body">YoursCalmly is designed for adults living with early-stage dementia or mild memory changes who enjoy playing on their own, as well as caregivers and family members looking for a calm activity to share.</p>
+          </div>
+          <div class="info-card">
+            <h3 data-i18n="faq.q3title">Is YoursCalmly a medical treatment for dementia?</h3>
+            <p data-i18n="faq.q3body">No. YoursCalmly offers supportive, wellness-oriented activities for enjoyment and gentle engagement. It is not a medical device, treatment, or diagnostic tool, and does not claim to cure, prevent, or slow the progression of dementia or any condition.</p>
+          </div>
+          <div class="info-card">
+            <h3 data-i18n="faq.q4title">Do the games have timers or scores?</h3>
+            <p data-i18n="faq.q4body">No. None of the three games use countdown timers or competitive scoring by default. Every round waits patiently for as long as it is needed, so there is no pressure to hurry or perform.</p>
+          </div>
+          <div class="info-card">
+            <h3 data-i18n="faq.q5title">Can I play in Chinese?</h3>
+            <p data-i18n="faq.q5body">Yes. Use the language toggle at the top of any page to switch the entire site — including all three games — between English and Chinese instantly, with no reload.</p>
+          </div>
+          <div class="info-card">
+            <h3 data-i18n="faq.q6title">What devices can I play on?</h3>
+            <p data-i18n="faq.q6body">YoursCalmly works in any modern web browser on a phone, tablet, or computer, with large text and large buttons designed to be easy to read and tap, even with less steady hands.</p>
+          </div>
         </div>
       </div>
     </section>

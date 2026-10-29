@@ -811,3 +811,193 @@ section + section {
 .center { text-align: center; }
 .mt-0 { margin-top: 0; }
 .hidden { display: none !important; }
+
+
+/* =====================================================================
+   Kopitiam theme (2026 redesign)
+   Warm, familiar and local: teal and terracotta on warm cream, with a
+   Peranakan-style tile border. Overrides the base styles above; all
+   class names and behaviour are unchanged. One calm light theme only.
+   ===================================================================== */
+:root {
+  --color-bg: #FBF6EE;
+  --color-bg-soft: #F3E7D3;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #FFFFFF;
+  --color-border: #E6D8C3;
+  --color-border-strong: #CDB89A;
+  --color-text: #2A1F1A;
+  --color-text-muted: #4A3B33;
+  --color-text-on-accent: #FFFFFF;
+  --color-primary: #C4613A;
+  --color-primary-hover: #A84F2D;
+  --color-primary-tint: #F6DFC9;
+  --color-accent: #1F6F6A;
+  --color-accent-tint: #D6EBE8;
+  --color-gold: #C2903F;
+  --color-teal-deep: #164F4B;
+  --logo-ring: #164F4B;
+  --logo-wave: #C4613A;
+  --color-success-bg: #E3F1EF;
+  --color-success-text: #164F4B;
+  --color-success-border: #1F6F6A;
+  --color-gentle-bg: #F6E9D3;
+  --color-gentle-text: #6A4B2A;
+  --color-gentle-border: #E2C9A0;
+  --color-focus: #1D5C8A;
+  --fs-body: 1.25rem;
+  --fs-lead: 1.4rem;
+  --fs-small: 1.05rem;
+  --fs-h1: clamp(2.5rem, 5.5vw + 0.5rem, 4.4rem);
+  --fs-h2: clamp(1.9rem, 3.4vw + 0.6rem, 2.9rem);
+  --fs-h3: clamp(1.4rem, 1.6vw + 0.9rem, 1.8rem);
+  --fs-card-title: 1.75rem;
+  --font-heading: 'Fraunces', Georgia, 'Noto Serif', serif;
+  --font-body: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --radius-sm: 12px;
+  --radius-md: 22px;
+  --radius-lg: 30px;
+  --radius-btn: 18px;
+  --tap-min: 60px;
+  --shadow-soft: none;
+  --shadow-card: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+  --color-bg: #FBF6EE;
+  --color-bg-soft: #F3E7D3;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #FFFFFF;
+  --color-border: #E6D8C3;
+  --color-border-strong: #CDB89A;
+  --color-text: #2A1F1A;
+  --color-text-muted: #4A3B33;
+  --color-text-on-accent: #FFFFFF;
+  --color-primary: #C4613A;
+  --color-primary-hover: #A84F2D;
+  --color-primary-tint: #F6DFC9;
+  --color-accent: #1F6F6A;
+  --color-accent-tint: #D6EBE8;
+  --color-gold: #C2903F;
+  --color-teal-deep: #164F4B;
+  --logo-ring: #164F4B;
+  --logo-wave: #C4613A;
+  --color-success-bg: #E3F1EF;
+  --color-success-text: #164F4B;
+  --color-success-border: #1F6F6A;
+  --color-gentle-bg: #F6E9D3;
+  --color-gentle-text: #6A4B2A;
+  --color-gentle-border: #E2C9A0;
+  --color-focus: #1D5C8A;
+  --fs-body: 1.25rem;
+  --fs-lead: 1.4rem;
+  --fs-small: 1.05rem;
+  --fs-h1: clamp(2.5rem, 5.5vw + 0.5rem, 4.4rem);
+  --fs-h2: clamp(1.9rem, 3.4vw + 0.6rem, 2.9rem);
+  --fs-h3: clamp(1.4rem, 1.6vw + 0.9rem, 1.8rem);
+  --fs-card-title: 1.75rem;
+  --font-heading: 'Fraunces', Georgia, 'Noto Serif', serif;
+  --font-body: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --radius-sm: 12px;
+  --radius-md: 22px;
+  --radius-lg: 30px;
+  --radius-btn: 18px;
+  --tap-min: 60px;
+  --shadow-soft: none;
+  --shadow-card: none;
+  }
+}
+html { color-scheme: light; background: var(--color-bg); }
+body { background: var(--color-bg); color: var(--color-text); }
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; color: var(--color-teal-deep); letter-spacing: -0.005em; }
+:lang(zh) h1, :lang(zh) h2, :lang(zh) h3 { font-family: 'Noto Serif SC', 'Songti SC', var(--font-heading); }
+a { color: var(--color-teal-deep); }
+
+/* Header with tile border */
+.site-header { background: var(--color-bg); backdrop-filter: none; border-bottom: 1px solid var(--color-border); }
+@media (prefers-color-scheme: dark) { .site-header { background: var(--color-bg); } }
+.site-header::before { content: ""; display: block; height: 22px; background: radial-gradient(circle at 50% 50%, #C4613A 0 5px, transparent 6px) 0 0/28px 28px,
+    linear-gradient(45deg, transparent 42%, #1F6F6A 42% 58%, transparent 58%) 0 0/28px 28px,
+    linear-gradient(-45deg, transparent 42%, #1F6F6A 42% 58%, transparent 58%) 0 0/28px 28px,
+    #F3E7D3; }
+.brand-mark { display: none; }
+.brand { font-size: 1.85rem; }
+.brand-word-a { color: var(--color-teal-deep); }
+.brand-word-b { color: var(--color-primary); }
+.nav-links a { font-size: 1.15rem; }
+.nav-links a[aria-current="page"] { color: var(--color-teal-deep); }
+.lang-toggle { background: var(--color-bg-soft); border: 0; border-radius: 14px; padding: 4px; }
+.lang-toggle button { min-height: 48px; min-width: 64px; border: 0; border-radius: 10px; background: transparent; color: var(--color-text); font-size: 1.1rem; font-weight: 700; }
+.lang-toggle button + button { border-left: 0; }
+.lang-toggle button[aria-pressed="true"] { background: var(--color-teal-deep); color: #fff; }
+.lang-toggle button:not([aria-pressed="true"]):hover { background: #fff; }
+
+/* Buttons */
+.btn { font-size: 1.2rem; border-radius: var(--radius-btn); }
+.btn-lg { min-height: 66px; font-size: 1.35rem; padding: 1rem 2.2rem; }
+.btn-primary { background: var(--color-primary); color: #fff; box-shadow: 0 5px 0 #9C4826; }
+.btn-primary:hover { background: var(--color-primary-hover); color: #fff; }
+.btn-primary:active { transform: translateY(3px); box-shadow: 0 2px 0 #9C4826; }
+.btn-secondary { color: var(--color-teal-deep); border-color: var(--color-teal-deep); background: transparent; }
+.btn-secondary:hover { background: var(--color-accent-tint); }
+.btn-ghost { background: #fff; color: var(--color-teal-deep); border-color: var(--color-teal-deep); }
+
+/* Sections */
+.section-alt { background: var(--color-bg-soft); }
+.section-header .eyebrow, .eyebrow { color: var(--color-primary); font-weight: 700; letter-spacing: 0.06em; }
+
+/* Hero: centred, warm */
+.hero { text-align: center; }
+.hero-shape { display: none; }
+.hero-content { max-width: 900px; margin: 0 auto; }
+.hero h1 { color: var(--color-teal-deep); }
+.hero .lead { margin-left: auto; margin-right: auto; max-width: 680px; }
+.hero-actions { justify-content: center; }
+
+/* How it works */
+.step { background: #fff; border: 2px solid var(--color-border); border-radius: var(--radius-lg); }
+.step-number { background: var(--color-accent); color: #fff; }
+
+/* Game cards: big coloured picture band */
+.game-card { padding: 0; overflow: hidden; border: 2px solid var(--color-border); border-radius: var(--radius-lg); background: #fff; gap: 0.5rem; }
+.game-card:hover, .game-card:focus-within { border-color: var(--color-accent); }
+.game-card-icon { width: 100%; height: 150px; border-radius: 0; font-size: 4.6rem; margin: 0 0 0.75rem; background: #F6DFC9; }
+.game-grid .game-card:nth-child(2) .game-card-icon { background: #D6EBE8; }
+.game-grid .game-card:nth-child(3) .game-card-icon { background: #EFE2C3; }
+.game-card h3, .game-card p { margin-left: 1.75rem; margin-right: 1.75rem; }
+.game-card .btn { margin: 0.75rem 1.75rem 1.75rem; }
+
+/* Info cards, guide, disclaimer */
+.info-card { background: #fff; border: 2px solid var(--color-border); border-radius: 24px; box-shadow: none; }
+.section-alt .info-card { background: #fff; }
+.disclaimer-box { background: #fff; border: 2px dashed var(--color-border-strong); border-radius: 24px; }
+.language-note-card { background: #fff; border: 2px solid var(--color-border); border-radius: 24px; }
+
+/* Games */
+.game-shell { background: #fff; border: 2px solid var(--color-border); border-radius: 32px; box-shadow: none; }
+.game-prompt { font-family: var(--font-heading); color: var(--color-teal-deep); font-size: clamp(1.8rem, 2.6vw + 1rem, 2.6rem); line-height: 1.2; }
+.progress-dots li[data-state="current"] { background: var(--color-primary); }
+.progress-dots li[data-state="done"] { background: var(--color-accent); }
+.choice-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.25rem; }
+.choice-card { min-height: 200px; justify-content: center; gap: 0.75rem; border: 3px solid var(--color-border); border-radius: 26px; background: var(--color-bg); font-size: 1.5rem; font-weight: 700; }
+.choice-card .choice-icon { font-size: 4.4rem; opacity: 1; }
+.choice-card:hover { border-color: var(--color-accent); background: #fff; }
+.choice-card[aria-pressed="true"] { border-color: var(--color-accent); background: var(--color-accent-tint); box-shadow: none; }
+.choice-card[data-result="correct"] { border-color: var(--color-accent); background: var(--color-success-bg); }
+.choice-card[data-result="missed"] { border-color: var(--color-gold); background: var(--color-gentle-bg); }
+.feedback-banner { font-size: 1.3rem; border-radius: 20px; }
+.take-your-time { font-size: 1.15rem; }
+.game-breadcrumb { color: var(--color-teal-deep); font-weight: 700; }
+
+/* Footer with tile border */
+.site-footer { border-top: 1px solid var(--color-border); padding-bottom: 0; }
+.site-footer::after { content: ""; display: block; height: 22px; margin-top: 2.5rem; background: radial-gradient(circle at 50% 50%, #C4613A 0 5px, transparent 6px) 0 0/28px 28px,
+    linear-gradient(45deg, transparent 42%, #1F6F6A 42% 58%, transparent 58%) 0 0/28px 28px,
+    linear-gradient(-45deg, transparent 42%, #1F6F6A 42% 58%, transparent 58%) 0 0/28px 28px,
+    #F3E7D3; }
+.footer-links a { color: var(--color-teal-deep); }
+.footer-links a:hover { color: var(--color-primary); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary:active { transform: none; }
+}

@@ -48,9 +48,9 @@
         langZh: '中文'
       },
       hero: {
-        eyebrow: 'A calm place to play',
-        title: 'Gentle brain games for early-stage dementia.',
-        lead: 'Three short, friendly online activities designed for one player at a time — free, with no sign-up. No pressure, no timers you can’t control, no judgement — just a pleasant way to spend a few quiet minutes.',
+        eyebrow: 'Free · no sign-up · no rush',
+        title: 'Gentle games, like a slow morning at the coffee shop.',
+        lead: 'Three short, friendly activities for people living with early-stage dementia. Familiar pictures, simple questions, and all the time in the world.',
         ctaPrimary: 'Start playing',
         ctaSecondary: 'Why we made this'
       },
@@ -273,9 +273,9 @@
         langZh: '中文'
       },
       hero: {
-        eyebrow: '一个安心游戏的地方',
-        title: '为早期失智症设计的温和益智游戏。',
-        lead: '三个简短、友好的线上活动，专为一个人安静地游玩而设计——完全免费，无需注册。没有压力，没有无法控制的倒计时，也没有评判——只是一段愉快的静心时光。',
+        eyebrow: '免费 · 无需注册 · 慢慢来',
+        title: '温和的小游戏，就像在咖啡店度过的悠闲早晨。',
+        lead: '三个简短、友好的活动，专为早期失智症人士设计。熟悉的图片，简单的问题，时间完全由您掌握。',
         ctaPrimary: '开始游戏',
         ctaSecondary: '了解我们的初衷'
       },
